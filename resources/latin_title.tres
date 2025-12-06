@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bmwr0onp7ei3q"]
+
+[ext_resource type="FontFile" uid="uid://bo7ps6pememqn" path="res://resources/fonts/Audiowide-Regular.ttf" id="1_yy3t7"]
+
+[resource]
+font = ExtResource("1_yy3t7")
+font_size = 40
+font_color = Color(0.21960784, 0.49019608, 0.92156863, 1)
+shadow_size = 8
+shadow_color = Color(0.21960784, 0.49019608, 0.92156863, 0.3137255)
+shadow_offset = Vector2(0, 0)

@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://5flivenw13ys"]
+
+[ext_resource type="FontFile" uid="uid://d4ndvcn3e1h1d" path="res://resources/fonts/Auraboo.otf" id="1_ct7mp"]
+
+[resource]
+font = ExtResource("1_ct7mp")
+font_size = 42
+font_color = Color(0.21960784, 0.49019608, 0.92156863, 1)
+shadow_size = 8
+shadow_color = Color(0.22080001, 0.48882657, 0.92, 0.3137255)
+shadow_offset = Vector2(0, 0)

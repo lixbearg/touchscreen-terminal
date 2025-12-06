@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmpli7o42ybb2"]
+
+[ext_resource type="Texture2D" uid="uid://dcaabjvxjjyai" path="res://resources/images/buttons/button_large.png" id="1_mi6dp"]
+[ext_resource type="Texture2D" uid="uid://bp7wvtmfrb75h" path="res://resources/images/buttons/button_large_active.png" id="2_rhj8v"]
+[ext_resource type="BitMap" uid="uid://drsotlnt54tju" path="res://resources/images/buttons/button_large_map.bmp" id="3_3q610"]
+[ext_resource type="Script" uid="uid://do1k7scvyerev" path="res://scripts/main_button.gd" id="4_i7y4x"]
+[ext_resource type="Script" uid="uid://c8emu4cgye028" path="res://addons/godOSC/scripts/OSCClient.gd" id="5_8m7bo"]
+
+[node name="MainButton" type="TextureButton"]
+anchors_preset = -1
+anchor_right = 0.223
+anchor_bottom = 0.089
+offset_right = -200.84001
+offset_bottom = -130.88
+toggle_mode = true
+texture_normal = ExtResource("1_mi6dp")
+texture_pressed = ExtResource("2_rhj8v")
+texture_click_mask = ExtResource("3_3q610")
+script = ExtResource("4_i7y4x")
+
+[node name="OSCClient" type="Node" parent="."]
+script = ExtResource("5_8m7bo")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

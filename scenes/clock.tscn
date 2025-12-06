@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://blkvf6iyxyh4s"]
+
+[ext_resource type="Script" uid="uid://doe03bm5414ch" path="res://scripts/clock.gd" id="1_er1xc"]
+[ext_resource type="LabelSettings" uid="uid://5flivenw13ys" path="res://resources/aurebesh_title.tres" id="1_y58p0"]
+[ext_resource type="FontFile" uid="uid://bv17gkodotikj" path="res://resources/fonts/Aurek-Besh.ttf" id="3_eptq3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dv1d"]
+font = ExtResource("3_eptq3")
+font_size = 46
+font_color = Color(0.21960784, 0.49019608, 0.92156863, 1)
+shadow_size = 8
+shadow_color = Color(0.22080001, 0.48882657, 0.92, 0.3137255)
+shadow_offset = Vector2(0, 0)
+
+[node name="Clock" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_er1xc")
+
+[node name="TimeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 7.0
+offset_right = 616.0
+offset_bottom = 48.0
+text = "00:00:00"
+label_settings = ExtResource("1_y58p0")
+
+[node name="DateLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 47.0
+offset_right = 600.0
+offset_bottom = 88.0
+text = "00-00-0000"
+label_settings = ExtResource("1_y58p0")
+
+[node name="RandomLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 25.0
+offset_right = 279.0
+offset_bottom = 83.0
+text = "000000000000"
+label_settings = SubResource("LabelSettings_7dv1d")
+
+[node name="ClockTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="RandomTimer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="ClockTimer" to="." method="_on_clock_timer_timeout"]
+[connection signal="timeout" from="RandomTimer" to="." method="_on_random_timer_timeout"]
