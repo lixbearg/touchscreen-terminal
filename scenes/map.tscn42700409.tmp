@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=4 uid="uid://bd1oo4obhy6a"]
+[gd_scene load_steps=5 format=4 uid="uid://bd1oo4obhy6a"]
 
-[ext_resource type="Script" uid="uid://blga5iqjcqt7u" path="res://scripts/map.gd" id="1_0cso3"]
 [ext_resource type="PackedScene" uid="uid://fw17yvr86lpb" path="res://resources/models/StarDestroyer.blend" id="1_4xfga"]
 [ext_resource type="FontFile" uid="uid://bo7ps6pememqn" path="res://resources/fonts/Audiowide-Regular.ttf" id="3_gldc4"]
 [ext_resource type="Material" uid="uid://dwsc4wjkkfo3a" path="res://resources/materials/map_outline.tres" id="4_0cso3"]
@@ -19,7 +18,6 @@ _surfaces = [{
 }]
 
 [node name="Map" type="Node3D"]
-script = ExtResource("1_0cso3")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59838724, 6.630272)

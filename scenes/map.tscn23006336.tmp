@@ -1,9 +1,47 @@
 [gd_scene load_steps=6 format=4 uid="uid://bd1oo4obhy6a"]
 
-[ext_resource type="Script" uid="uid://blga5iqjcqt7u" path="res://scripts/map.gd" id="1_0cso3"]
 [ext_resource type="PackedScene" uid="uid://fw17yvr86lpb" path="res://resources/models/StarDestroyer.blend" id="1_4xfga"]
 [ext_resource type="FontFile" uid="uid://bo7ps6pememqn" path="res://resources/fonts/Audiowide-Regular.ttf" id="3_gldc4"]
 [ext_resource type="Material" uid="uid://dwsc4wjkkfo3a" path="res://resources/materials/map_outline.tres" id="4_0cso3"]
+
+[sub_resource type="GDScript" id="GDScript_gldc4"]
+script/source = "class_name Map
+extends Node3D
+
+@onready var rigid_body_3d: RigidBody3D = $RigidBody3D
+
+var rotating : bool = false
+var prev_mouse_pos : Vector2
+var next_mouse_pos : Vector2
+const CLICKABLE_AREA = Rect2(Vector2(-105, -132), Vector2(950, 750))  
+
+
+func rotate_model(x_amount : float, y_amount : float) -> void:
+	rigid_body_3d.rotate_x(x_amount)
+	rigid_body_3d.rotate_y(y_amount)
+
+
+func _process(delta: float) -> void:
+	if (Input.is_action_just_pressed(\"Rotate\") and inside_clickable_area()):
+		rotating = true
+		prev_mouse_pos = get_viewport().get_mouse_position()
+	if (Input.is_action_just_released(\"Rotate\")):
+		rotating = false
+		
+	if (rotating):
+		next_mouse_pos = get_viewport().get_mouse_position()
+		rigid_body_3d.rotate_y((next_mouse_pos.x - prev_mouse_pos.x) * .2 * delta)
+		rigid_body_3d.rotate_x((next_mouse_pos.y - prev_mouse_pos.y) * .2 * delta)
+		prev_mouse_pos = next_mouse_pos
+	else:		
+		rigid_body_3d.rotate_y(.1 * delta)
+		#if rotation.x != 0:
+			#rotate_x(move_toward(rotation.x, 0, .001))
+
+
+func inside_clickable_area():
+	return CLICKABLE_AREA.has_point(get_viewport().get_mouse_position())
+"
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0cso3"]
 _surfaces = [{
@@ -19,7 +57,7 @@ _surfaces = [{
 }]
 
 [node name="Map" type="Node3D"]
-script = ExtResource("1_0cso3")
+script = SubResource("GDScript_gldc4")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59838724, 6.630272)
