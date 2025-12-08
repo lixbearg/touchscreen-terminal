@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://864liwcw0tec"]
+[gd_scene load_steps=5 format=3 uid="uid://864liwcw0tec"]
 
 [ext_resource type="Texture2D" uid="uid://bg7gov05nh0k5" path="res://resources/images/background.png" id="1_0wfyh"]
-[ext_resource type="Script" uid="uid://c5161n78ovgr2" path="res://scripts/map_touch_area.gd" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://blkvf6iyxyh4s" path="res://scenes/clock.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bd1oo4obhy6a" path="res://scenes/map.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cmpli7o42ybb2" path="res://scenes/button.tscn" id="4_jyhfs"]
@@ -87,14 +86,3 @@ offset_top = 1112.0
 offset_right = 1229.0
 offset_bottom = 1243.0
 rotation = 3.1415927
-
-[node name="MapTouchArea" type="Button" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 65.0
-offset_top = 208.0
-offset_right = 1013.0
-offset_bottom = 808.0
-script = ExtResource("2_tbgi4")
-
-[connection signal="pressed" from="MapTouchArea" to="MapTouchArea" method="_on_pressed"]
