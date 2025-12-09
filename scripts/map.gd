@@ -2,6 +2,7 @@ class_name Map
 extends Node3D
 
 @onready var rigid_body_3d: RigidBody3D = $RigidBody3D
+@onready var map_rotate_sfx: AudioStreamPlayer = $MapRotateSFX
 
 var rotating : bool = false
 var prev_mouse_pos : Vector2
@@ -26,8 +27,13 @@ func _process(delta: float) -> void:
 		rigid_body_3d.rotate_y((next_mouse_pos.x - prev_mouse_pos.x) * .2 * delta)
 		rigid_body_3d.rotate_x((next_mouse_pos.y - prev_mouse_pos.y) * .2 * delta)
 		prev_mouse_pos = next_mouse_pos
+		
+		if !map_rotate_sfx.playing:
+			map_rotate_sfx.play()
 	else:		
 		rigid_body_3d.rotate_y(.1 * delta)
+		if map_rotate_sfx.playing:
+			map_rotate_sfx.stop()
 		#if rotation.x != 0:
 			#rotate_x(move_toward(rotation.x, 0, .001))
 

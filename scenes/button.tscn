@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmpli7o42ybb2"]
+[gd_scene load_steps=8 format=3 uid="uid://cmpli7o42ybb2"]
 
 [ext_resource type="Texture2D" uid="uid://dcaabjvxjjyai" path="res://resources/images/buttons/button_large.png" id="1_mi6dp"]
 [ext_resource type="Texture2D" uid="uid://bp7wvtmfrb75h" path="res://resources/images/buttons/button_large_active.png" id="2_rhj8v"]
 [ext_resource type="BitMap" uid="uid://drsotlnt54tju" path="res://resources/images/buttons/button_large_map.bmp" id="3_3q610"]
 [ext_resource type="Script" uid="uid://do1k7scvyerev" path="res://scripts/main_button.gd" id="4_i7y4x"]
 [ext_resource type="Script" uid="uid://c8emu4cgye028" path="res://addons/godOSC/scripts/OSCClient.gd" id="5_8m7bo"]
+[ext_resource type="AudioStream" uid="uid://bf3nsxgcl4g7q" path="res://resources/sfx/Computer Beep 6A.wav" id="6_8m7bo"]
+[ext_resource type="AudioStream" uid="uid://sigxynxqt0hb" path="res://resources/sfx/Computer Beep 6B.wav" id="7_t81cg"]
 
 [node name="MainButton" type="TextureButton"]
 anchors_preset = -1
@@ -20,5 +22,11 @@ script = ExtResource("4_i7y4x")
 
 [node name="OSCClient" type="Node" parent="."]
 script = ExtResource("5_8m7bo")
+
+[node name="SFXEnable" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_8m7bo")
+
+[node name="SFXDisable" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_t81cg")
 
 [connection signal="toggled" from="." to="." method="_on_toggled"]

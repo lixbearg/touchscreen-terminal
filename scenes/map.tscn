@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://bd1oo4obhy6a"]
+[gd_scene load_steps=7 format=4 uid="uid://bd1oo4obhy6a"]
 
 [ext_resource type="Script" uid="uid://blga5iqjcqt7u" path="res://scripts/map.gd" id="1_0cso3"]
 [ext_resource type="PackedScene" uid="uid://fw17yvr86lpb" path="res://resources/models/StarDestroyer.blend" id="1_4xfga"]
 [ext_resource type="FontFile" uid="uid://bo7ps6pememqn" path="res://resources/fonts/Audiowide-Regular.ttf" id="3_gldc4"]
 [ext_resource type="Material" uid="uid://dwsc4wjkkfo3a" path="res://resources/materials/map_outline.tres" id="4_0cso3"]
+[ext_resource type="AudioStream" uid="uid://cc5oapknkx7ey" path="res://resources/sfx/Computer Warble 5.wav" id="5_2klcf"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_0cso3"]
 _surfaces = [{
@@ -60,3 +61,6 @@ transform = Transform3D(3.444598, 0, 0, 0, 3.8961518, 0, 0, 0, 4.853707, 0.00436
 mesh = SubResource("ArrayMesh_0cso3")
 skeleton = NodePath("../StarDestroyer/Plane")
 surface_material_override/0 = ExtResource("4_0cso3")
+
+[node name="MapRotateSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_2klcf")

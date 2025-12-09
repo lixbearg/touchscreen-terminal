@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bf3nsxgcl4g7q"
+path="res://.godot/imported/Computer Beep 6A.wav-056280415fed4b37af38ec71d69f4ac4.sample"
+
+[deps]
+
+source_file="res://resources/sfx/Computer Beep 6A.wav"
+dest_files=["res://.godot/imported/Computer Beep 6A.wav-056280415fed4b37af38ec71d69f4ac4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

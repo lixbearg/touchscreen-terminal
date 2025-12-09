@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwr6x4fjhl5iv"]
+
+[ext_resource type="Script" uid="uid://ckqfhks2l0kkx" path="res://scripts/slider.gd" id="1_24ij4"]
+[ext_resource type="AudioStream" uid="uid://ctgqeapsy5ssj" path="res://resources/sfx/Computer Warble 9.wav" id="1_tdie8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jeyrk"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_tdie8"]
+
+[sub_resource type="DPITexture" id="DPITexture_24ij4"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"8\" height=\"4\"><path fill=\"#fff\" fill-opacity=\".25\" d=\"M0 3V1h16v2z\"/></svg>
+"
+base_scale = 2.24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhkcm"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2jh2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.21960784, 0.49019608, 0.92156863, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+expand_margin_left = 45.0
+expand_margin_right = 45.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsijn"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.21960784, 0.49019608, 0.92156863, 1)
+expand_margin_left = 45.0
+expand_margin_right = 45.0
+
+[node name="Slider" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSlider" type="VSlider" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.083000004
+anchor_bottom = 0.17300001
+offset_right = 0.35999298
+offset_bottom = -0.16000366
+theme_override_icons/grabber = SubResource("CanvasTexture_jeyrk")
+theme_override_icons/grabber_highlight = SubResource("CanvasTexture_tdie8")
+theme_override_icons/tick = SubResource("DPITexture_24ij4")
+theme_override_styles/slider = SubResource("StyleBoxFlat_mhkcm")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_c2jh2")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xsijn")
+value = 50.0
+tick_count = 10
+ticks_position = 3
+script = ExtResource("1_24ij4")
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_tdie8")
+
+[connection signal="drag_ended" from="VSlider" to="VSlider" method="_on_drag_ended"]
+[connection signal="drag_started" from="VSlider" to="VSlider" method="_on_drag_started"]
+[connection signal="value_changed" from="VSlider" to="VSlider" method="_on_value_changed"]
