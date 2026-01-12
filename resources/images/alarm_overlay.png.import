@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2ya8evv2lfar"
-path="res://.godot/imported/background.png-9740da5d2abfe250dd008c30e7890f2f.ctex"
+uid="uid://dx1dl7vvk2etc"
+path="res://.godot/imported/alarm_overlay.png-12edc69c075217577d450073ba15df04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/background.png"
-dest_files=["res://.godot/imported/background.png-9740da5d2abfe250dd008c30e7890f2f.ctex"]
+source_file="res://resources/images/alarm_overlay.png"
+dest_files=["res://.godot/imported/alarm_overlay.png-12edc69c075217577d450073ba15df04.ctex"]
 
 [params]
 

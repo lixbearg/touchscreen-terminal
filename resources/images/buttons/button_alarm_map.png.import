@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://niepdodjbwde"
+path="res://.godot/imported/button_alarm_map.png-63e5ee2da0c0c02b82ce35333220440a.res"
+
+[deps]
+
+source_file="res://resources/images/buttons/button_alarm_map.png"
+dest_files=["res://.godot/imported/button_alarm_map.png-63e5ee2da0c0c02b82ce35333220440a.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

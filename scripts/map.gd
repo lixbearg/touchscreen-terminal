@@ -8,6 +8,7 @@ extends Node3D
 var rotating : bool = false
 var prev_mouse_pos : Vector2
 var next_mouse_pos : Vector2
+var click_enabled : bool = true
 const CLICKABLE_AREA = Rect2(Vector2(-105, -132), Vector2(950, 750))  
 
 
@@ -44,4 +45,4 @@ func change_zoom(value : float) -> void:
 
 
 func inside_clickable_area():
-	return CLICKABLE_AREA.has_point(get_viewport().get_mouse_position())
+	return CLICKABLE_AREA.has_point(get_viewport().get_mouse_position()) and click_enabled

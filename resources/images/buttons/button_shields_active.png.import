@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2ya8evv2lfar"
-path="res://.godot/imported/background.png-9740da5d2abfe250dd008c30e7890f2f.ctex"
+uid="uid://bko8tcrxgxovf"
+path="res://.godot/imported/button_shields_active.png-3e60807f0534d69daddda9da9a84d55f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/images/background.png"
-dest_files=["res://.godot/imported/background.png-9740da5d2abfe250dd008c30e7890f2f.ctex"]
+source_file="res://resources/images/buttons/button_shields_active.png"
+dest_files=["res://.godot/imported/button_shields_active.png-3e60807f0534d69daddda9da9a84d55f.ctex"]
 
 [params]
 

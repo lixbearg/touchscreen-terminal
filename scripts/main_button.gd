@@ -1,5 +1,10 @@
+class_name MainButton
 extends TextureButton
 
+signal main_button_pressed(type, index, toggled_on)
+
+enum ButtonType {MAP, SHIELDS, ALARM}
+@export var button_type: ButtonType
 @export var on_message_address : String
 @export var off_message_address : String
 
@@ -17,3 +22,4 @@ func _on_toggled(toggled_on: bool) -> void:
 		osc_client.send_message(on_message_address, [0])
 		osc_client.send_message(off_message_address, [1])
 		sfx_disable.play()
+	main_button_pressed.emit(button_type, self.get_index(), toggled_on)

@@ -1,0 +1,16 @@
+[remap]
+
+importer="bitmap"
+type="BitMap"
+uid="uid://b242x1j2whup"
+path="res://.godot/imported/button_shields_map.png-8ad26c9e9b97a526041e1c78d0b5d640.res"
+
+[deps]
+
+source_file="res://resources/images/buttons/button_shields_map.png"
+dest_files=["res://.godot/imported/button_shields_map.png-8ad26c9e9b97a526041e1c78d0b5d640.res"]
+
+[params]
+
+create_from=0
+threshold=0.5

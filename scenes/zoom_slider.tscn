@@ -40,18 +40,14 @@ expand_margin_right = 27.0
 
 [node name="ZoomSlider" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+scale = Vector2(1, 1.0325232)
 script = ExtResource("1_34omv")
 
 [node name="Slider" type="VSlider" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.083000004
-anchor_bottom = 0.368
+layout_mode = 0
+offset_left = 708.06134
+offset_right = 786.0113
+offset_bottom = 707.7464
 rotation = -4.712389
 theme_override_icons/grabber = SubResource("CanvasTexture_jeyrk")
 theme_override_icons/grabber_highlight = SubResource("CanvasTexture_tdie8")
@@ -61,7 +57,7 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_xsijn")
 min_value = 0.1
 max_value = 1.0
 step = 0.05
-value = 0.5
+value = 1.0
 tick_count = 10
 ticks_position = 3
 
