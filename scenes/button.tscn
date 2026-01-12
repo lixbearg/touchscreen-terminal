@@ -22,6 +22,8 @@ script = ExtResource("4_i7y4x")
 
 [node name="OSCClient" type="Node" parent="."]
 script = ExtResource("5_8m7bo")
+ip_address = "192.168.100.58"
+port = 4646
 
 [node name="SFXEnable" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_8m7bo")

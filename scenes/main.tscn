@@ -80,8 +80,8 @@ offset_right = 531.08
 offset_bottom = 1395.44
 rotation = 3.1415927
 button_group = SubResource("ButtonGroup_a8y0u")
-on_message_address = "/map01/on"
-off_message_address = "/map01/off"
+on_message_address = "/ship_bridge/map01/on"
+off_message_address = "/ship_bridge/map01/off"
 
 [node name="MapButton02" parent="Buttons" instance=ExtResource("4_jyhfs")]
 layout_mode = 1
@@ -90,8 +90,8 @@ offset_top = 1058.0
 offset_right = 501.08
 offset_bottom = 1224.44
 button_group = SubResource("ButtonGroup_a8y0u")
-on_message_address = "/map02/on"
-off_message_address = "/map02/off"
+on_message_address = "/ship_bridge/map02/on"
+off_message_address = "/ship_bridge/map02/off"
 
 [node name="MapButton03" parent="Buttons" instance=ExtResource("4_jyhfs")]
 layout_mode = 1
@@ -100,8 +100,8 @@ offset_top = 1058.0
 offset_right = 803.08
 offset_bottom = 1224.44
 button_group = SubResource("ButtonGroup_a8y0u")
-on_message_address = "/map03/on"
-off_message_address = "/map03/off"
+on_message_address = "/ship_bridge/map03/on"
+off_message_address = "/ship_bridge/map03/off"
 
 [node name="MapButton04" parent="Buttons" instance=ExtResource("4_jyhfs")]
 layout_mode = 1
@@ -111,8 +111,8 @@ offset_right = 1255.08
 offset_bottom = 1394.44
 rotation = 3.1415927
 button_group = SubResource("ButtonGroup_a8y0u")
-on_message_address = "/map04/on"
-off_message_address = "/map04/off"
+on_message_address = "/ship_bridge/map04/on"
+off_message_address = "/ship_bridge/map04/off"
 
 [node name="ShieldsButton" parent="Buttons" instance=ExtResource("4_jyhfs")]
 layout_mode = 1
@@ -124,8 +124,8 @@ texture_normal = ExtResource("6_choun")
 texture_pressed = ExtResource("7_ya4ey")
 texture_click_mask = ExtResource("8_eb6dy")
 button_type = 1
-on_message_address = "/shields/on"
-off_message_address = "/shields/off"
+on_message_address = "/ship_bridge/shields/on"
+off_message_address = "/ship_bridge/shields/off"
 
 [node name="AlarmButton" parent="Buttons" instance=ExtResource("4_jyhfs")]
 layout_mode = 1
@@ -137,8 +137,8 @@ texture_normal = ExtResource("9_trceg")
 texture_pressed = ExtResource("10_a8y0u")
 texture_click_mask = ExtResource("11_jkv2x")
 button_type = 2
-on_message_address = "/alarms/on"
-off_message_address = "/alarms/off"
+on_message_address = "/ship_bridge/alarms/on"
+off_message_address = "/ship_bridge/alarms/off"
 
 [node name="BackgroundSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tbgi4")
