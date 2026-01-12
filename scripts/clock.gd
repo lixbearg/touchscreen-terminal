@@ -3,7 +3,7 @@ extends Control
 @onready var time_label: Label = $TimeLabel
 @onready var date_label: Label = $DateLabel
 @onready var random_label: Label = $RandomLabel
-@onready var timer: Timer = $Timer
+#@onready var timer: Timer = $Timer
 @onready var random_timer: Timer = $RandomTimer
 var initial_time = 0123485937
 

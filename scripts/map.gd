@@ -3,16 +3,12 @@ extends Node3D
 
 @onready var rigid_body_3d: RigidBody3D = $RigidBody3D
 @onready var map_rotate_sfx: AudioStreamPlayer = $MapRotateSFX
+@onready var camera_3d: Camera3D = $Camera3D
 
 var rotating : bool = false
 var prev_mouse_pos : Vector2
 var next_mouse_pos : Vector2
 const CLICKABLE_AREA = Rect2(Vector2(-105, -132), Vector2(950, 750))  
-
-
-func rotate_model(x_amount : float, y_amount : float) -> void:
-	rigid_body_3d.rotate_x(x_amount)
-	rigid_body_3d.rotate_y(y_amount)
 
 
 func _process(delta: float) -> void:
@@ -36,6 +32,15 @@ func _process(delta: float) -> void:
 			map_rotate_sfx.stop()
 		#if rotation.x != 0:
 			#rotate_x(move_toward(rotation.x, 0, .001))
+
+
+func rotate_model(x_amount : float, y_amount : float) -> void:
+	rigid_body_3d.rotate_x(x_amount)
+	rigid_body_3d.rotate_y(y_amount)
+
+
+func change_zoom(value : float) -> void:
+	camera_3d.size = value
 
 
 func inside_clickable_area():

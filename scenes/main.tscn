@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://864liwcw0tec"]
+[gd_scene load_steps=8 format=3 uid="uid://864liwcw0tec"]
 
-[ext_resource type="Texture2D" uid="uid://bg7gov05nh0k5" path="res://resources/images/background.png" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://d3vd6hcbuy8rs" path="res://resources/images/background.png" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://dmfu8731ppu36" path="res://scripts/main.gd" id="1_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://blkvf6iyxyh4s" path="res://scenes/clock.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://bd1oo4obhy6a" path="res://scenes/map.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cmpli7o42ybb2" path="res://scenes/button.tscn" id="4_jyhfs"]
 [ext_resource type="AudioStream" uid="uid://c7soptivcdexj" path="res://resources/sfx/Computer Drone 2C.wav" id="5_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://cwr6x4fjhl5iv" path="res://scenes/slider.tscn" id="5_tefeu"]
+[ext_resource type="PackedScene" uid="uid://cwr6x4fjhl5iv" path="res://scenes/zoom_slider.tscn" id="5_tefeu"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_o6xl0")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -56,9 +58,9 @@ offset_bottom = 40.0
 [node name="Button01" parent="Buttons" instance=ExtResource("4_jyhfs")]
 layout_mode = 1
 offset_left = 299.0
-offset_top = 1113.0
+offset_top = 1229.0
 offset_right = 531.08
-offset_bottom = 1279.44
+offset_bottom = 1395.44
 rotation = 3.1415927
 on_message_address = "/composition/layers/1/clips/1/connect"
 off_message_address = "/composition/layers/1/clear"
@@ -66,43 +68,36 @@ off_message_address = "/composition/layers/1/clear"
 [node name="Button02" parent="Buttons" instance=ExtResource("4_jyhfs")]
 layout_mode = 1
 offset_left = 269.0
-offset_top = 942.0
-offset_right = 475.0
-offset_bottom = 1073.0
+offset_top = 1058.0
+offset_right = 501.08
+offset_bottom = 1224.44
 on_message_address = "/composition/layers/2/clips/1/connect"
 off_message_address = "/composition/layers/2/clear"
 
 [node name="Button03" parent="Buttons" instance=ExtResource("4_jyhfs")]
 layout_mode = 1
 offset_left = 571.0
-offset_top = 942.0
-offset_right = 777.0
-offset_bottom = 1073.0
+offset_top = 1058.0
+offset_right = 803.08
+offset_bottom = 1224.44
 on_message_address = "/composition/layers/3/clips/1/connect"
 off_message_address = "/composition/layers/3/clear"
 
 [node name="Button04" parent="Buttons" instance=ExtResource("4_jyhfs")]
 layout_mode = 1
 offset_left = 1023.0
-offset_top = 1112.0
-offset_right = 1229.0
-offset_bottom = 1243.0
+offset_top = 1228.0
+offset_right = 1255.08
+offset_bottom = 1394.44
 rotation = 3.1415927
 
 [node name="BackgroundSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_tbgi4")
 autoplay = true
 
-[node name="Slider" parent="." instance=ExtResource("5_tefeu")]
+[node name="ZoomSlider" parent="." instance=ExtResource("5_tefeu")]
 layout_mode = 1
-offset_left = 112.0
-offset_top = 1214.0
-offset_right = 112.0
-offset_bottom = 1214.0
-
-[node name="Slider2" parent="." instance=ExtResource("5_tefeu")]
-layout_mode = 1
-offset_left = 280.0
-offset_top = 1214.0
-offset_right = 280.0
-offset_bottom = 1214.0
+offset_left = 893.0
+offset_top = 928.0
+offset_right = 893.0
+offset_bottom = 928.0
