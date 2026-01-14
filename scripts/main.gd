@@ -12,6 +12,11 @@ extends Control
 var alarm_active : bool = false
 var shields_active : bool = false
 
+var alarm_texture_normal = preload("res://resources/images/buttons/button_alarm.png")
+var alarm_texture_active = preload("res://resources/images/buttons/button_alarm_active.png")
+var shields_texture_normal = preload("res://resources/images/buttons/button_shields.png")
+var shields_texture_active = preload("res://resources/images/buttons/button_shields_active.png")
+
 const SHIELDS_ON_ADDRESS : String = "/terminal/shields/on"
 const SHIELDS_OFF_ADDRESS : String = "/terminal/shields/off"
 const ALARM_ON_ADDRESS : String = "/terminal/alarm/on"
@@ -33,18 +38,16 @@ func _on_osc_server_message_received(address, value, time) -> void:
 	match address:
 		SHIELDS_ON_ADDRESS:
 			shields_active = true
+			shields_button.texture_normal = shields_texture_active
 		SHIELDS_OFF_ADDRESS:
 			shields_active = false
+			shields_button.texture_normal = shields_texture_normal
 		ALARM_ON_ADDRESS:
+			alarm_button.texture_normal = alarm_texture_active
 			alarm_active = true
 		ALARM_OFF_ADDRESS:
+			alarm_button.texture_normal = alarm_texture_normal
 			alarm_active = false
-	update_buttons_status()
-
-
-func update_buttons_status() -> void:
-	shields_button.set_pressed_no_signal(shields_active)
-	alarm_button.set_pressed_no_signal(alarm_active)
 	alarm_overlay.visible = alarm_active
 	map.click_enabled = !alarm_active
 
