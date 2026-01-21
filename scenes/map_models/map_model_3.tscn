@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dqdn1e8adopgq"]
 
 [ext_resource type="FontFile" uid="uid://bo7ps6pememqn" path="res://resources/fonts/Audiowide-Regular.ttf" id="1_nucvr"]
-[ext_resource type="PackedScene" uid="uid://dix6j3527v1d4" path="res://resources/models/map1.blend" id="2_qqlqb"]
+[ext_resource type="PackedScene" uid="uid://dix6j3527v1d4" path="res://resources/models/map.blend" id="2_qqlqb"]
 [ext_resource type="Material" uid="uid://cbkwt63bwvxy" path="res://resources/materials/map_model.tres" id="3_esy5c"]
 [ext_resource type="Material" uid="uid://e0kvgu6lamiv" path="res://resources/materials/map_selected.tres" id="4_c7mt4"]
 [ext_resource type="Material" uid="uid://dwsc4wjkkfo3a" path="res://resources/materials/map_outline.tres" id="5_lhhps"]
@@ -123,6 +123,9 @@ surface_material_override/0 = ExtResource("5_lhhps")
 surface_material_override/0 = ExtResource("5_lhhps")
 
 [node name="Cube_025" parent="MapMesh" index="29"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_024" parent="MapMesh" index="30"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
 [editable path="MapMesh"]

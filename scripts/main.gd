@@ -17,6 +17,8 @@ var alarm_texture_active = preload("res://resources/images/buttons/button_alarm_
 var shields_texture_normal = preload("res://resources/images/buttons/button_shields.png")
 var shields_texture_active = preload("res://resources/images/buttons/button_shields_active.png")
 
+var text_tween : Tween
+
 const SHIELDS_ON_ADDRESS : String = "/terminal/shields/on"
 const SHIELDS_OFF_ADDRESS : String = "/terminal/shields/off"
 const ALARM_ON_ADDRESS : String = "/terminal/alarm/on"
@@ -60,6 +62,8 @@ func _on_main_button_pressed(type : MainButton.ButtonType, index : int, toggle_o
 
 func animate_informations_text() -> void:
 	informations.visible_ratio = 0.0
-	var tween = create_tween()
-	tween.tween_property(informations, "visible_ratio", 1.0, 3.0)
+	if text_tween and text_tween.is_valid():
+		text_tween.kill()
+	text_tween = create_tween()
+	text_tween.tween_property(informations, "visible_ratio", 1.0, 3.0)
 	

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://gvupuh8ok4at"]
 
 [ext_resource type="FontFile" uid="uid://bo7ps6pememqn" path="res://resources/fonts/Audiowide-Regular.ttf" id="1_kmnd3"]
-[ext_resource type="PackedScene" uid="uid://dix6j3527v1d4" path="res://resources/models/map1.blend" id="2_280j6"]
+[ext_resource type="PackedScene" uid="uid://dix6j3527v1d4" path="res://resources/models/map.blend" id="2_280j6"]
 [ext_resource type="Material" uid="uid://e0kvgu6lamiv" path="res://resources/materials/map_selected.tres" id="3_3a0my"]
 [ext_resource type="Material" uid="uid://cbkwt63bwvxy" path="res://resources/materials/map_model.tres" id="4_6j8kk"]
 [ext_resource type="Material" uid="uid://dwsc4wjkkfo3a" path="res://resources/materials/map_outline.tres" id="5_8tgxr"]

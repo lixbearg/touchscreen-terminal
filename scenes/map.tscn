@@ -17,7 +17,7 @@ size = 6.227
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0)
 
 [node name="MapModel" parent="MapContainer" instance=ExtResource("2_gldc4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43949318, -0.2537415)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43569916, -0.25155103)
 
 [node name="MapRotateSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_2klcf")

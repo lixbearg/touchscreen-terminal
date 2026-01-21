@@ -17,7 +17,8 @@ func _on_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		sfx_enable.play()
 	else:
-		sfx_disable.play()
+		if button_type != ButtonType.MAP:
+			sfx_disable.play()
 	main_button_pressed.emit(button_type, self.get_index(), toggled_on)
 
 
