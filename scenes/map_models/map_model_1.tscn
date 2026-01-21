@@ -1,0 +1,126 @@
+[gd_scene load_steps=6 format=3 uid="uid://gvupuh8ok4at"]
+
+[ext_resource type="FontFile" uid="uid://bo7ps6pememqn" path="res://resources/fonts/Audiowide-Regular.ttf" id="1_kmnd3"]
+[ext_resource type="PackedScene" uid="uid://dix6j3527v1d4" path="res://resources/models/map1.blend" id="2_280j6"]
+[ext_resource type="Material" uid="uid://e0kvgu6lamiv" path="res://resources/materials/map_selected.tres" id="3_3a0my"]
+[ext_resource type="Material" uid="uid://cbkwt63bwvxy" path="res://resources/materials/map_model.tres" id="4_6j8kk"]
+[ext_resource type="Material" uid="uid://dwsc4wjkkfo3a" path="res://resources/materials/map_outline.tres" id="5_8tgxr"]
+
+[node name="MapModel" type="RigidBody3D"]
+gravity_scale = 0.0
+
+[node name="LabelPanel" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2608019, 0.6883451, 1.245459)
+billboard = 1
+modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
+outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
+text = "Mesa de
+controle"
+font = ExtResource("1_kmnd3")
+font_size = 38
+outline_size = 30
+
+[node name="LabelWindow" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6291418, 1.237396, 0.43299413)
+billboard = 1
+modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
+outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
+text = "Janela frontal"
+font = ExtResource("1_kmnd3")
+font_size = 38
+outline_size = 30
+
+[node name="MapMesh" parent="." instance=ExtResource("2_280j6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2743516, 4.7683716e-07, -0.09333038)
+
+[node name="Plane" parent="MapMesh" index="0"]
+surface_material_override/0 = ExtResource("4_6j8kk")
+
+[node name="Plane_001" parent="MapMesh" index="1"]
+surface_material_override/0 = ExtResource("4_6j8kk")
+
+[node name="Plane_002" parent="MapMesh" index="2"]
+surface_material_override/0 = ExtResource("3_3a0my")
+
+[node name="Plane_003" parent="MapMesh" index="3"]
+surface_material_override/0 = ExtResource("4_6j8kk")
+
+[node name="Plane_004" parent="MapMesh" index="4"]
+surface_material_override/0 = ExtResource("4_6j8kk")
+
+[node name="Cube" parent="MapMesh" index="5"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_001" parent="MapMesh" index="6"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_002" parent="MapMesh" index="7"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_003" parent="MapMesh" index="8"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_004" parent="MapMesh" index="9"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_005" parent="MapMesh" index="10"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_006" parent="MapMesh" index="11"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_007" parent="MapMesh" index="12"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_008" parent="MapMesh" index="13"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_009" parent="MapMesh" index="14"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_010" parent="MapMesh" index="15"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_011" parent="MapMesh" index="16"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_012" parent="MapMesh" index="17"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_013" parent="MapMesh" index="18"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_014" parent="MapMesh" index="19"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_015" parent="MapMesh" index="20"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_016" parent="MapMesh" index="21"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_017" parent="MapMesh" index="22"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_018" parent="MapMesh" index="23"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_019" parent="MapMesh" index="24"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_020" parent="MapMesh" index="25"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_021" parent="MapMesh" index="26"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_022" parent="MapMesh" index="27"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_023" parent="MapMesh" index="28"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_025" parent="MapMesh" index="29"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[editable path="MapMesh"]

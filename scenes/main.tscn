@@ -19,7 +19,6 @@
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_a8y0u"]
 resource_local_to_scene = false
-allow_unpress = true
 
 [sub_resource type="LabelSettings" id="LabelSettings_jbj1t"]
 font = ExtResource("14_jkv2x")
