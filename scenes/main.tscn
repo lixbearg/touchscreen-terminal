@@ -22,7 +22,7 @@ resource_local_to_scene = false
 
 [sub_resource type="LabelSettings" id="LabelSettings_jbj1t"]
 font = ExtResource("14_jkv2x")
-font_size = 38
+font_size = 37
 font_color = Color(0.21960784, 0.49019608, 0.92156863, 1)
 
 [node name="Main" type="Control"]
@@ -158,11 +158,11 @@ clip_contents = true
 custom_minimum_size = Vector2(920, 200)
 layout_mode = 0
 offset_left = 82.0
-offset_top = 1383.0
+offset_top = 1391.0
 offset_right = 1002.0
-offset_bottom = 1602.0
-text = "ENTRADA PRINCIPAL
-Seja bem vindo à nossa festa! "
+offset_bottom = 1610.0
+text = "- CORREDOR DE ENTRADA -
+Seja bem vindo à nossa festa! Aqui é onde a aventura começa. Este mapa irá te mostrar tudo que te espera adiante."
 label_settings = SubResource("LabelSettings_jbj1t")
 autowrap_mode = 2
 clip_text = true

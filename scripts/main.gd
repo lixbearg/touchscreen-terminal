@@ -57,6 +57,7 @@ func _on_osc_server_message_received(address, value, time) -> void:
 func _on_main_button_pressed(type : MainButton.ButtonType, index : int, toggle_on : bool):
 	if type == MainButton.ButtonType.MAP and toggle_on:
 		map.change_map(index)
+		informations.text = Strings.INFORMATIONS[index]
 		animate_informations_text()
 
 

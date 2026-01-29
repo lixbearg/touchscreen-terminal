@@ -9,25 +9,13 @@
 [node name="MapModel" type="RigidBody3D"]
 gravity_scale = 0.0
 
-[node name="LabelPanel" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8545605, 0.6883451, -1.9964402)
-visible = false
+[node name="LabelCake" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023269892, 0.6883451, -0.6812879)
 billboard = 1
 modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
 outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
-text = "Mesa de
-controle"
-font = ExtResource("1_s5yub")
-font_size = 38
-outline_size = 30
-
-[node name="LabelWindow" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6291418, 1.237396, -3.4292765)
-visible = false
-billboard = 1
-modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
-outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
-text = "Janela frontal"
+text = "Mesa do
+bolo"
 font = ExtResource("1_s5yub")
 font_size = 38
 outline_size = 30

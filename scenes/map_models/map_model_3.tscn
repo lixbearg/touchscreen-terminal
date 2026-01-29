@@ -9,25 +9,23 @@
 [node name="MapModel" type="RigidBody3D"]
 gravity_scale = 0.0
 
-[node name="LabelPanel" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8545605, 0.6883451, -1.9964402)
-visible = false
+[node name="LabelDance" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.244032, 0.6883453, 0.6248151)
 billboard = 1
 modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
 outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
-text = "Mesa de
-controle"
+text = "Boate"
 font = ExtResource("1_nucvr")
 font_size = 38
 outline_size = 30
 
-[node name="LabelWindow" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6291418, 1.237396, -3.4292765)
-visible = false
+[node name="LabelJedi" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54202205, 0.8770914, -1.2184312)
 billboard = 1
 modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
 outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
-text = "Janela frontal"
+text = "Treinamento
+Jedi"
 font = ExtResource("1_nucvr")
 font_size = 38
 outline_size = 30

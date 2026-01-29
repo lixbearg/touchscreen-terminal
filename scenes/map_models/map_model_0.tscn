@@ -19,6 +19,17 @@ font = ExtResource("1_nt277")
 font_size = 38
 outline_size = 30
 
+[node name="LabelMap" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1218909, 0.6883451, -0.04011333)
+billboard = 1
+modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
+outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
+text = "Mapa da
+Nave"
+font = ExtResource("1_nt277")
+font_size = 38
+outline_size = 30
+
 [node name="LabelReception" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2753906, 0.7024081, 1.5047182)
 billboard = 1
