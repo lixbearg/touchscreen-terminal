@@ -133,4 +133,7 @@ surface_material_override/0 = ExtResource("5_qb3r8")
 [node name="Cube_025" parent="MapMesh" index="29"]
 surface_material_override/0 = ExtResource("5_qb3r8")
 
+[node name="Cube_024" parent="MapMesh" index="30"]
+surface_material_override/0 = ExtResource("5_qb3r8")
+
 [editable path="MapMesh"]

@@ -21,7 +21,7 @@ font_size = 38
 outline_size = 30
 
 [node name="LabelWindow" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6291418, 1.237396, 0.43299413)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6681619, 1.237396, 0.43299413)
 billboard = 1
 modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
 outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
@@ -121,6 +121,9 @@ surface_material_override/0 = ExtResource("5_8tgxr")
 surface_material_override/0 = ExtResource("5_8tgxr")
 
 [node name="Cube_025" parent="MapMesh" index="29"]
+surface_material_override/0 = ExtResource("5_8tgxr")
+
+[node name="Cube_024" parent="MapMesh" index="30"]
 surface_material_override/0 = ExtResource("5_8tgxr")
 
 [editable path="MapMesh"]
