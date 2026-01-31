@@ -10,7 +10,7 @@
 gravity_scale = 0.0
 
 [node name="LabelDance" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.244032, 0.6883453, 0.6248151)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0773513, 1.1513008, -2.5729203)
 billboard = 1
 modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
 outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
@@ -19,8 +19,28 @@ font = ExtResource("1_nucvr")
 font_size = 38
 outline_size = 30
 
+[node name="LabelSnacks" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3607936, 1.1513008, -0.14366865)
+billboard = 1
+modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
+outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
+text = "Space Snacks"
+font = ExtResource("1_nucvr")
+font_size = 38
+outline_size = 30
+
+[node name="LabelDrinks" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5696042, 1.1513008, -1.8265227)
+billboard = 1
+modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
+outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
+text = "Star Drinks"
+font = ExtResource("1_nucvr")
+font_size = 38
+outline_size = 30
+
 [node name="LabelJedi" type="Label3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54202205, 0.8770914, -1.2184312)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23352748, 0.8770914, -5.0961213)
 billboard = 1
 modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
 outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
@@ -30,8 +50,19 @@ font = ExtResource("1_nucvr")
 font_size = 38
 outline_size = 30
 
+[node name="LabelGames" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.051975906, 0.8770914, 2.4401476)
+billboard = 1
+modulate = Color(0.21960784, 0.49019608, 0.92156863, 1)
+outline_modulate = Color(0.047058824, 0.07450981, 0.10980392, 1)
+text = "Área de jogos
+e brinquedos"
+font = ExtResource("1_nucvr")
+font_size = 38
+outline_size = 30
+
 [node name="MapMesh" parent="." instance=ExtResource("2_qqlqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4045074, 0, 2.5317087)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4045074, 0, -0.44620156)
 
 [node name="Plane" parent="MapMesh" index="0"]
 surface_material_override/0 = ExtResource("3_esy5c")
@@ -72,58 +103,118 @@ surface_material_override/0 = ExtResource("5_lhhps")
 [node name="Cube_007" parent="MapMesh" index="12"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_008" parent="MapMesh" index="13"]
+[node name="Cube_009" parent="MapMesh" index="13"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_009" parent="MapMesh" index="14"]
+[node name="Cube_010" parent="MapMesh" index="14"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_010" parent="MapMesh" index="15"]
+[node name="Cube_011" parent="MapMesh" index="15"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_011" parent="MapMesh" index="16"]
+[node name="Cube_012" parent="MapMesh" index="16"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_012" parent="MapMesh" index="17"]
+[node name="Cube_013" parent="MapMesh" index="17"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_013" parent="MapMesh" index="18"]
+[node name="Cube_014" parent="MapMesh" index="18"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_014" parent="MapMesh" index="19"]
+[node name="Cube_015" parent="MapMesh" index="19"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_015" parent="MapMesh" index="20"]
+[node name="Cube_016" parent="MapMesh" index="20"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_016" parent="MapMesh" index="21"]
+[node name="Cube_017" parent="MapMesh" index="21"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_017" parent="MapMesh" index="22"]
+[node name="Cube_018" parent="MapMesh" index="22"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_018" parent="MapMesh" index="23"]
+[node name="Cube_019" parent="MapMesh" index="23"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_019" parent="MapMesh" index="24"]
+[node name="Cube_020" parent="MapMesh" index="24"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_020" parent="MapMesh" index="25"]
+[node name="Cube_021" parent="MapMesh" index="25"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_021" parent="MapMesh" index="26"]
+[node name="Cube_022" parent="MapMesh" index="26"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_022" parent="MapMesh" index="27"]
+[node name="Cube_023" parent="MapMesh" index="27"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_023" parent="MapMesh" index="28"]
+[node name="Cube_024" parent="MapMesh" index="28"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_025" parent="MapMesh" index="29"]
+[node name="Plane_005" parent="MapMesh" index="29"]
+surface_material_override/0 = ExtResource("4_c7mt4")
+
+[node name="Cube_026" parent="MapMesh" index="30"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
-[node name="Cube_024" parent="MapMesh" index="30"]
+[node name="Cube_008" parent="MapMesh" index="31"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_025" parent="MapMesh" index="32"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_027" parent="MapMesh" index="33"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_028" parent="MapMesh" index="34"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_029" parent="MapMesh" index="35"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_030" parent="MapMesh" index="36"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_031" parent="MapMesh" index="37"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_032" parent="MapMesh" index="38"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_033" parent="MapMesh" index="39"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_034" parent="MapMesh" index="40"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_035" parent="MapMesh" index="41"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_036" parent="MapMesh" index="42"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_037" parent="MapMesh" index="43"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_038" parent="MapMesh" index="44"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_039" parent="MapMesh" index="45"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_040" parent="MapMesh" index="46"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_041" parent="MapMesh" index="47"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_042" parent="MapMesh" index="48"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cube_043" parent="MapMesh" index="49"]
+surface_material_override/0 = ExtResource("5_lhhps")
+
+[node name="Cone" parent="MapMesh" index="50"]
 surface_material_override/0 = ExtResource("5_lhhps")
 
 [editable path="MapMesh"]
