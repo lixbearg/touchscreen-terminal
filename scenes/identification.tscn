@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scripts/identification.gd" id="1_ident"]
-[ext_resource type="Texture2D" uid="uid://b3wrm1gredw3m" path="res://resources/images/backgrounds/identification_waiting_01.png" id="2_gesture"]
-[ext_resource type="Texture2D" uid="uid://bdfu1urhxtim6" path="res://resources/images/backgrounds/identification_waiting_blank.png" id="3_background"]
-[ext_resource type="Texture2D" uid="uid://mfcesnp5nkok" path="res://resources/images/backgrounds/identification_granted.png" id="4_granted"]
+[ext_resource type="Script" path="res://scripts/scan_line.gd" id="2_scan"]
+[ext_resource type="Texture2D" uid="uid://b3wrm1gredw3m" path="res://resources/images/backgrounds/identification_waiting_01.png" id="3_gesture"]
+[ext_resource type="Texture2D" uid="uid://bdfu1urhxtim6" path="res://resources/images/backgrounds/identification_waiting_blank.png" id="4_background"]
+[ext_resource type="Texture2D" uid="uid://mfcesnp5nkok" path="res://resources/images/backgrounds/identification_granted.png" id="5_granted"]
 
 [node name="Identification" type="Control"]
 layout_mode = 3
@@ -22,7 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("3_background")
+texture = ExtResource("4_background")
 expand_mode = 1
 stretch_mode = 6
 
@@ -34,9 +35,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("2_gesture")
+texture = ExtResource("3_gesture")
 expand_mode = 1
 stretch_mode = 6
+
+[node name="ScanLine" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_scan")
 
 [node name="Granted" type="TextureRect" parent="."]
 visible = false
@@ -47,7 +59,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("4_granted")
+texture = ExtResource("5_granted")
 expand_mode = 1
 stretch_mode = 6
 

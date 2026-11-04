@@ -13,9 +13,11 @@ const FADE_TIME : float = 0.45
 const BLANK_HOLD_TIME : float = 0.15
 const GRANTED_FADE_TIME : float = 0.25
 const GRANTED_HOLD_TIME : float = 3.0
+const SCAN_TIME : float = 1.1
 
 @onready var gesture : TextureRect = $Gesture
 @onready var granted : TextureRect = $Granted
+@onready var scan_line : Control = $ScanLine
 @onready var animation_timer : Timer = $AnimationTimer
 
 var changing_scene : bool = false
@@ -37,7 +39,7 @@ func _input(event : InputEvent) -> void:
 	animation_timer.stop()
 	if waiting_tween and waiting_tween.is_valid():
 		waiting_tween.kill()
-	_show_granted()
+	_start_scan()
 
 
 func _is_activation_event(event : InputEvent) -> bool:
@@ -72,6 +74,21 @@ func _show_granted() -> void:
 	tween.tween_property(granted, "modulate:a", 1.0, GRANTED_FADE_TIME)
 	tween.tween_interval(GRANTED_HOLD_TIME)
 	tween.tween_callback(_enter_main)
+
+
+func _start_scan() -> void:
+	scan_line.visible = true
+	scan_line.set("scan_progress", 0.0)
+
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(scan_line, "scan_progress", 1.0, SCAN_TIME)
+	tween.tween_callback(_on_scan_finished)
+
+
+func _on_scan_finished() -> void:
+	scan_line.visible = false
+	_show_granted()
 
 
 func _enter_main() -> void:
