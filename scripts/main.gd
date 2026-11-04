@@ -24,12 +24,43 @@ const SHIELDS_OFF_ADDRESS : String = "/terminal/shields/off"
 const ALARM_ON_ADDRESS : String = "/terminal/alarm/on"
 const ALARM_OFF_ADDRESS : String = "/terminal/alarm/off"
 
+const IDENTIFICATION_SCENE_PATH : String = "res://scenes/identification.tscn"
+
+var changing_scene : bool = false
+
 
 func _ready() -> void:
 	zoom_slider.connect("zoom_value_changed", _on_zoom_value_changed)
 	osc_server.connect("message_received", _on_osc_server_message_received)
 	for button in buttons.get_children():
 		button.connect("main_button_pressed", _on_main_button_pressed)
+	$InactivityTimer.timeout.connect(_on_inactivity_timeout)
+	$InactivityTimer.start()
+
+
+func _input(event : InputEvent) -> void:
+	if _is_activity_event(event):
+		$InactivityTimer.start()
+
+
+func _is_activity_event(event : InputEvent) -> bool:
+	if event is InputEventMouseButton:
+		return event.pressed
+	if event is InputEventScreenTouch:
+		return event.pressed
+	if event is InputEventKey:
+		return event.pressed and not event.echo
+	if event is InputEventJoypadButton:
+		return event.pressed
+	return false
+
+
+func _on_inactivity_timeout() -> void:
+	if changing_scene:
+		return
+
+	changing_scene = true
+	get_tree().call_deferred("change_scene_to_file", IDENTIFICATION_SCENE_PATH)
 
 
 func _on_zoom_value_changed(value : float) -> void:
