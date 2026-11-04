@@ -8,6 +8,9 @@ extends Control
 @onready var osc_server: OSCServer = $OSCServer
 @onready var shields_button: MainButton = $Buttons/ShieldsButton
 @onready var alarm_button: MainButton = $Buttons/AlarmButton
+@onready var fade_overlay: ColorRect = $FadeOverlay
+
+const SCENE_FADE_IN_TIME : float = 0.35
 
 var alarm_active : bool = false
 var shields_active : bool = false
@@ -36,6 +39,18 @@ func _ready() -> void:
 		button.connect("main_button_pressed", _on_main_button_pressed)
 	$InactivityTimer.timeout.connect(_on_inactivity_timeout)
 	$InactivityTimer.start()
+	_fade_in_from_black()
+
+
+func _fade_in_from_black() -> void:
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(fade_overlay, "modulate:a", 0.0, SCENE_FADE_IN_TIME)
+	tween.tween_callback(_hide_fade_overlay)
+
+
+func _hide_fade_overlay() -> void:
+	fade_overlay.visible = false
 
 
 func _input(event : InputEvent) -> void:

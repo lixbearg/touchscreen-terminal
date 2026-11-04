@@ -14,10 +14,12 @@ const BLANK_HOLD_TIME : float = 0.15
 const GRANTED_FADE_TIME : float = 0.25
 const GRANTED_HOLD_TIME : float = 3.0
 const SCAN_TIME : float = 1.6
+const SCENE_FADE_TIME : float = 0.3
 
 @onready var gesture : TextureRect = $Gesture
 @onready var granted : TextureRect = $Granted
 @onready var scan_line : Control = $ScanLine
+@onready var fade_overlay : ColorRect = $FadeOverlay
 @onready var animation_timer : Timer = $AnimationTimer
 
 var changing_scene : bool = false
@@ -92,6 +94,16 @@ func _on_scan_finished() -> void:
 
 
 func _enter_main() -> void:
+	fade_overlay.visible = true
+	fade_overlay.modulate.a = 0.0
+
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(fade_overlay, "modulate:a", 1.0, SCENE_FADE_TIME)
+	tween.tween_callback(_change_to_main)
+
+
+func _change_to_main() -> void:
 	get_tree().call_deferred("change_scene_to_file", MAIN_SCENE_PATH)
 
 
