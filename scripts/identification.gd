@@ -8,9 +8,9 @@ const WAITING_GESTURES : Array[Texture2D] = [
 	preload("res://resources/images/backgrounds/identification_waiting_03.png"),
 ]
 
-const HOLD_TIME : float = 1.4
-const FADE_TIME : float = 0.8
-const BLANK_HOLD_TIME : float = 0.2
+const HOLD_TIME : float = 2.2
+const FADE_TIME : float = 0.45
+const BLANK_HOLD_TIME : float = 0.15
 
 @onready var gesture : TextureRect = $Gesture
 @onready var animation_timer : Timer = $AnimationTimer
