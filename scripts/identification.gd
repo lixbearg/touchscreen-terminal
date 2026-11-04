@@ -11,12 +11,16 @@ const WAITING_GESTURES : Array[Texture2D] = [
 const HOLD_TIME : float = 2.2
 const FADE_TIME : float = 0.45
 const BLANK_HOLD_TIME : float = 0.15
+const GRANTED_FADE_TIME : float = 0.25
+const GRANTED_HOLD_TIME : float = 3.0
 
 @onready var gesture : TextureRect = $Gesture
+@onready var granted : TextureRect = $Granted
 @onready var animation_timer : Timer = $AnimationTimer
 
 var changing_scene : bool = false
 var gesture_index : int = 0
+var waiting_tween : Tween
 
 
 func _ready() -> void:
@@ -30,7 +34,10 @@ func _input(event : InputEvent) -> void:
 		return
 
 	changing_scene = true
-	get_tree().call_deferred("change_scene_to_file", MAIN_SCENE_PATH)
+	animation_timer.stop()
+	if waiting_tween and waiting_tween.is_valid():
+		waiting_tween.kill()
+	_show_granted()
 
 
 func _is_activation_event(event : InputEvent) -> bool:
@@ -47,13 +54,28 @@ func _on_animation_timer_timeout() -> void:
 	if changing_scene:
 		return
 
+	waiting_tween = create_tween()
+	waiting_tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	waiting_tween.tween_property(gesture, "modulate:a", 0.0, FADE_TIME)
+	waiting_tween.tween_callback(_advance_gesture)
+	waiting_tween.tween_interval(BLANK_HOLD_TIME)
+	waiting_tween.tween_property(gesture, "modulate:a", 1.0, FADE_TIME)
+	waiting_tween.finished.connect(_on_fade_finished)
+
+
+func _show_granted() -> void:
+	granted.visible = true
+	granted.modulate.a = 0.0
+
 	var tween := create_tween()
-	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(gesture, "modulate:a", 0.0, FADE_TIME)
-	tween.tween_callback(_advance_gesture)
-	tween.tween_interval(BLANK_HOLD_TIME)
-	tween.tween_property(gesture, "modulate:a", 1.0, FADE_TIME)
-	tween.finished.connect(_on_fade_finished)
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(granted, "modulate:a", 1.0, GRANTED_FADE_TIME)
+	tween.tween_interval(GRANTED_HOLD_TIME)
+	tween.tween_callback(_enter_main)
+
+
+func _enter_main() -> void:
+	get_tree().call_deferred("change_scene_to_file", MAIN_SCENE_PATH)
 
 
 func _advance_gesture() -> void:
