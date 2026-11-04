@@ -13,7 +13,7 @@ const FADE_TIME : float = 0.45
 const BLANK_HOLD_TIME : float = 0.15
 const GRANTED_FADE_TIME : float = 0.25
 const GRANTED_HOLD_TIME : float = 3.0
-const SCAN_TIME : float = 1.1
+const SCAN_TIME : float = 1.6
 
 @onready var gesture : TextureRect = $Gesture
 @onready var granted : TextureRect = $Granted
@@ -81,7 +81,7 @@ func _start_scan() -> void:
 	scan_line.set("scan_progress", 0.0)
 
 	var tween := create_tween()
-	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	tween.tween_property(scan_line, "scan_progress", 1.0, SCAN_TIME)
 	tween.tween_callback(_on_scan_finished)
 

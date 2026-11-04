@@ -10,8 +10,8 @@ var scan_area := PackedVector2Array([
 	Vector2(178.0, 1862.0),
 ])
 
-const SCAN_TOP : float = 580.0
-const SCAN_BOTTOM : float = 1856.0
+const SCAN_TOP : float = 600.0
+const SCAN_BOTTOM : float = 1840.0
 const EDGE_INSET : float = 4.0
 
 @export_range(0.0, 1.0) var scan_progress : float = 0.0:
@@ -33,10 +33,10 @@ func _draw() -> void:
 	if end.x <= start.x:
 		return
 
-	draw_line(start, end, Color(1.0, 0.45, 0.1, 0.06), 26.0, true)
-	draw_line(start, end, Color(1.0, 0.55, 0.15, 0.16), 12.0, true)
-	draw_line(start, end, Color(1.0, 0.75, 0.4, 0.85), 3.0, true)
-	draw_line(start, end, Color(1.0, 0.97, 0.9, 1.0), 1.0, true)
+	draw_line(start, end, Color(1.0, 0.45, 0.1, 0.06), 34.0, true)
+	draw_line(start, end, Color(1.0, 0.55, 0.15, 0.16), 16.0, true)
+	draw_line(start, end, Color(1.0, 0.75, 0.4, 0.85), 4.0, true)
+	draw_line(start, end, Color(1.0, 0.97, 0.9, 1.0), 1.5, true)
 
 
 func _scan_segment(y : float) -> PackedVector2Array:
