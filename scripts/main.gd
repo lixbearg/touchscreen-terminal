@@ -10,7 +10,8 @@ extends Control
 @onready var alarm_button: MainButton = $Buttons/AlarmButton
 @onready var fade_overlay: ColorRect = $FadeOverlay
 
-const SCENE_FADE_IN_TIME : float = 0.35
+const SCENE_FADE_IN_TIME : float = 0.4
+const SCENE_FADE_OUT_TIME : float = 0.4
 
 var alarm_active : bool = false
 var shields_active : bool = false
@@ -39,10 +40,10 @@ func _ready() -> void:
 		button.connect("main_button_pressed", _on_main_button_pressed)
 	$InactivityTimer.timeout.connect(_on_inactivity_timeout)
 	$InactivityTimer.start()
-	_fade_in_from_black()
+	_fade_in()
 
 
-func _fade_in_from_black() -> void:
+func _fade_in() -> void:
 	var tween := create_tween()
 	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(fade_overlay, "modulate:a", 0.0, SCENE_FADE_IN_TIME)
@@ -75,6 +76,20 @@ func _on_inactivity_timeout() -> void:
 		return
 
 	changing_scene = true
+	_fade_out_to_identification()
+
+
+func _fade_out_to_identification() -> void:
+	fade_overlay.visible = true
+	fade_overlay.modulate.a = 0.0
+
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(fade_overlay, "modulate:a", 1.0, SCENE_FADE_OUT_TIME)
+	tween.tween_callback(_change_to_identification)
+
+
+func _change_to_identification() -> void:
 	get_tree().call_deferred("change_scene_to_file", IDENTIFICATION_SCENE_PATH)
 
 

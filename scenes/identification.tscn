@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Script" path="res://scripts/identification.gd" id="1_ident"]
 [ext_resource type="Script" path="res://scripts/scan_line.gd" id="2_scan"]
 [ext_resource type="Texture2D" uid="uid://b3wrm1gredw3m" path="res://resources/images/backgrounds/identification_waiting_01.png" id="3_gesture"]
 [ext_resource type="Texture2D" uid="uid://bdfu1urhxtim6" path="res://resources/images/backgrounds/identification_waiting_blank.png" id="4_background"]
 [ext_resource type="Texture2D" uid="uid://mfcesnp5nkok" path="res://resources/images/backgrounds/identification_granted.png" id="5_granted"]
+[ext_resource type="AudioStream" uid="uid://ri1fcuf1xqgj" path="res://resources/sfx/Scan.wav" id="6_scan"]
 
 [node name="Identification" type="Control"]
 layout_mode = 3
@@ -64,7 +65,6 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="FadeOverlay" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -72,7 +72,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.0470588, 0.0745098, 0.109804, 1)
 
 [node name="AnimationTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="ScanSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_scan")

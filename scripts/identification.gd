@@ -12,17 +12,19 @@ const HOLD_TIME : float = 2.2
 const FADE_TIME : float = 0.45
 const BLANK_HOLD_TIME : float = 0.15
 const GRANTED_FADE_TIME : float = 0.25
-const GRANTED_HOLD_TIME : float = 3.0
+const GRANTED_HOLD_TIME : float = 4.0
 const SCAN_TIME : float = 1.6
-const SCENE_FADE_TIME : float = 0.3
+const SCENE_FADE_TIME : float = 0.4
 
 @onready var gesture : TextureRect = $Gesture
 @onready var granted : TextureRect = $Granted
 @onready var scan_line : Control = $ScanLine
 @onready var fade_overlay : ColorRect = $FadeOverlay
 @onready var animation_timer : Timer = $AnimationTimer
+@onready var scan_sfx : AudioStreamPlayer = $ScanSFX
 
 var changing_scene : bool = false
+var scan_started : bool = false
 var gesture_index : int = 0
 var waiting_tween : Tween
 
@@ -31,6 +33,7 @@ func _ready() -> void:
 	gesture.texture = WAITING_GESTURES[gesture_index]
 	animation_timer.timeout.connect(_on_animation_timer_timeout)
 	animation_timer.start(HOLD_TIME)
+	_fade_in()
 
 
 func _input(event : InputEvent) -> void:
@@ -79,6 +82,11 @@ func _show_granted() -> void:
 
 
 func _start_scan() -> void:
+	if scan_started:
+		return
+
+	scan_started = true
+	scan_sfx.play()
 	scan_line.visible = true
 	scan_line.set("scan_progress", 0.0)
 
@@ -91,6 +99,20 @@ func _start_scan() -> void:
 func _on_scan_finished() -> void:
 	scan_line.visible = false
 	_show_granted()
+
+
+func _fade_in() -> void:
+	fade_overlay.visible = true
+	fade_overlay.modulate.a = 1.0
+
+	var tween := create_tween()
+	tween.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(fade_overlay, "modulate:a", 0.0, SCENE_FADE_TIME)
+	tween.tween_callback(_hide_fade_overlay)
+
+
+func _hide_fade_overlay() -> void:
+	fade_overlay.visible = false
 
 
 func _enter_main() -> void:

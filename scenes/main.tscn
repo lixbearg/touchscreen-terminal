@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://864liwcw0tec"]
+[gd_scene load_steps=13 format=3 uid="uid://864liwcw0tec"]
 
 [ext_resource type="Script" uid="uid://dmfu8731ppu36" path="res://scripts/main.gd" id="1_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://be0meej8xbya0" path="res://resources/images/background_no_buttons.png" id="2_ya4ey"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bd1oo4obhy6a" path="res://scenes/map.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cmpli7o42ybb2" path="res://scenes/button.tscn" id="4_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://v11i1blr4k1k" path="res://resources/images/map_frame.png" id="4_muem4"]
-[ext_resource type="AudioStream" uid="uid://c7soptivcdexj" path="res://resources/sfx/Computer Drone 2C.wav" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cwr6x4fjhl5iv" path="res://scenes/zoom_slider.tscn" id="5_tefeu"]
 [ext_resource type="Texture2D" uid="uid://dx1dl7vvk2etc" path="res://resources/images/alarm_overlay.png" id="14_a8y0u"]
 [ext_resource type="FontFile" uid="uid://bo7ps6pememqn" path="res://resources/fonts/Audiowide-Regular.ttf" id="14_jkv2x"]
@@ -116,10 +115,6 @@ button_group = SubResource("ButtonGroup_a8y0u")
 on_message_address = "/ship_bridge/map04/on"
 off_message_address = "/ship_bridge/map04/off"
 
-[node name="BackgroundSFX" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_tbgi4")
-autoplay = true
-
 [node name="ZoomSlider" parent="." instance=ExtResource("5_tefeu")]
 layout_mode = 1
 offset_left = 186.0
@@ -166,4 +161,4 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.0470588, 0.0745098, 0.109804, 1)
