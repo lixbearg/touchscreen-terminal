@@ -6,20 +6,15 @@ extends Control
 @onready var alarm_overlay: TextureRect = $AlarmOverlay
 @onready var informations: Label = $Informations
 @onready var osc_server: OSCServer = $OSCServer
-@onready var shields_button: MainButton = $Buttons/ShieldsButton
-@onready var alarm_button: MainButton = $Buttons/AlarmButton
 @onready var fade_overlay: ColorRect = $FadeOverlay
 
 const SCENE_FADE_IN_TIME : float = 0.4
 const SCENE_FADE_OUT_TIME : float = 0.4
 
 var alarm_active : bool = false
+# Tracked for bridge/OSC integration even though the on-screen control
+# buttons were intentionally removed from this layout.
 var shields_active : bool = false
-
-var alarm_texture_normal = preload("res://resources/images/buttons/button_alarm.png")
-var alarm_texture_active = preload("res://resources/images/buttons/button_alarm_active.png")
-var shields_texture_normal = preload("res://resources/images/buttons/button_shields.png")
-var shields_texture_active = preload("res://resources/images/buttons/button_shields_active.png")
 
 var text_tween : Tween
 
@@ -101,15 +96,11 @@ func _on_osc_server_message_received(address, value, time) -> void:
 	match address:
 		SHIELDS_ON_ADDRESS:
 			shields_active = true
-			shields_button.texture_normal = shields_texture_active
 		SHIELDS_OFF_ADDRESS:
 			shields_active = false
-			shields_button.texture_normal = shields_texture_normal
 		ALARM_ON_ADDRESS:
-			alarm_button.texture_normal = alarm_texture_active
 			alarm_active = true
 		ALARM_OFF_ADDRESS:
-			alarm_button.texture_normal = alarm_texture_normal
 			alarm_active = false
 	alarm_overlay.visible = alarm_active
 	map.click_enabled = !alarm_active
