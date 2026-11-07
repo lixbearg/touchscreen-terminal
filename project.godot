@@ -32,10 +32,6 @@ window/size/viewport_height=1920
 window/size/mode=3
 window/stretch/mode="canvas_items"
 
-[rendering]
-
-environment/defaults/default_clear_color=Color(0.0470588, 0.0745098, 0.109804, 1)
-
 [input]
 
 Rotate={
@@ -44,3 +40,6 @@ Rotate={
 ]
 }
 
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.0470588, 0.0745098, 0.109804, 1)
