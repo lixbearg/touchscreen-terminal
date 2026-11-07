@@ -32,6 +32,8 @@ The `Windows Desktop` preset in `export_presets.cfg` is already configured for:
 
 - The project starts in fullscreen at 1080x1920
   (`display/window/size/mode=3`). The canvas stretches to the display.
+- The mouse cursor is hidden while the game window has focus by the `Cursor`
+  autoload in `scripts/cursor.gd`.
 - The terminal listens for OSC over UDP on port **4646**. Allow inbound UDP
   4646 through Windows Firewall on the target machine, otherwise messages from
   the bridge will not arrive.

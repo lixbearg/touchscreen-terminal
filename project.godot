@@ -24,6 +24,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 BGM="*res://scripts/bgm.gd"
+Cursor="*res://scripts/cursor.gd"
 
 [display]
 
